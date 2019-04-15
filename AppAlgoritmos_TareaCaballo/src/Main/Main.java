@@ -9,7 +9,7 @@ package Main;
  *
  * @author Estudiante
  */
-public class AppAlgoritmos_TareaCaballo {
+public class Main {
 
     /**
      * @param args the command line arguments
