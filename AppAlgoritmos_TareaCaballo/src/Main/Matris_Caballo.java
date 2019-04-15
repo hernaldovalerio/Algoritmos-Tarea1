@@ -10,7 +10,7 @@ package Main;
  * @version 14 de abril del 2019
  * @author Hernaldo Valerio P.
  */
-public class Matris {
+public class Matris_Caballo {
     private Caballo [][] matris_caballo;
     private Caballo o_caballo;
 
@@ -25,6 +25,12 @@ public class Matris {
     public Caballo getO_caballo() {
         return o_caballo;
     }
+
+    public Matris_Caballo(int pFila, int pColumna) {
+        matris_caballo = new Caballo[pFila][pColumna];
+        o_caballo = new Caballo();
+    }
+    
                 
     public boolean TamannoMatrix(int pTamanno) {
         if (pTamanno > 5) {
@@ -90,5 +96,20 @@ public class Matris {
                 break;
         }
     }
+    
+    public String ImprimirMatris(){
+        String impresion = "\n            ";
+        for (int i = 0; i < matris_caballo.length; i++) {
+            for (int j = 0; j < matris_caballo[i].length; j++) {
+                if (matris_caballo[i][j] == null) 
+                    impresion += "0" + "   ";                
+                else
+                    impresion += "1" + "   ";                
+            }
+            impresion += "\n            ";
+        }
+        
+        return impresion;
+    }    
 }
 
