@@ -17,7 +17,7 @@ public class Main {
     public static void main(String[] args) {
         JFrmPrincipal oJFrmPrincipal = new JFrmPrincipal();
         oJFrmPrincipal.setVisible(true);
-        oJFrmPrincipal.setLocationRelativeTo(null);
+        oJFrmPrincipal.setLocationRelativeTo(null);                
     }
     
 }

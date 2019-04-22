@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Main;
+package logica;
 
 /**
  *
@@ -13,6 +13,7 @@ package Main;
 public class Caballo {
     private int fila;
     private int columna;
+    private int numero;
 
     public int getFila() {
         return fila;
@@ -30,9 +31,18 @@ public class Caballo {
         this.columna = columna;
     }
 
+    public int getNumero() {
+        return numero;
+    }
+
+    public void setNumero(int numero) {
+        this.numero = numero;
+    }
+
     public Caballo() {
         this.fila = 0;
         this.columna = 0;
+        this.numero = 0;
     }
     
 }

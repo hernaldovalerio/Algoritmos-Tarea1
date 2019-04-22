@@ -7,8 +7,11 @@ package Main;
 
 /**
  *
- * @author T7
+ * @version 22 de abril del 2019
+ * @author Hernaldo Valerio P.
  */
-public class MyException {
-    
+public class MyException extends Exception{
+    public MyException(String msg) {
+        super(msg);
+    }
 }
