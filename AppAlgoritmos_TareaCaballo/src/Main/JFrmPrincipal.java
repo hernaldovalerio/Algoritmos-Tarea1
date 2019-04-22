@@ -193,14 +193,14 @@ public class JFrmPrincipal extends javax.swing.JFrame {
     private void jBttnCambiarTamanno_MatrisActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBttnCambiarTamanno_MatrisActionPerformed
         int tamanno = Integer.parseInt(jTxtFld_TamannoMatris.getText());        
         matris_caballo = new Matris_Caballo(tamanno, tamanno);
-        this.jTxTImpresion_Matris.setText(matris_caballo.ImprimirMatris());
+        this.jTxTImpresion_Matris.setText(matris_caballo.MostrarMatris());
     }//GEN-LAST:event_jBttnCambiarTamanno_MatrisActionPerformed
 
     private void jBttnElegirCoordenadas_SalidaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBttnElegirCoordenadas_SalidaActionPerformed
         int fila = Integer.parseInt(jTxtFld_X.getText());
         int columna = Integer.parseInt(jTxtFld_Y.getText());                
         matris_caballo.PosicionarCaballo(fila, columna);
-        this.jTxTImpresion_Matris.setText(matris_caballo.ImprimirMatris());
+        this.jTxTImpresion_Matris.setText(matris_caballo.MostrarMatris());
     }//GEN-LAST:event_jBttnElegirCoordenadas_SalidaActionPerformed
 
     /**

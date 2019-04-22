@@ -120,26 +120,7 @@ public class Lista_Doble {
             throw new MyException("La lista está vacía");
         }        
     }
-    
-    public String ImprimirRecorrido() throws MyException {
-        String txt = "";
-        if (primero != null) {
-
-            txt = "Null <= =>    " + primero.getX() + "," + primero.getX();
-            Nodo aux = primero;
-
-            while (aux.getSig() != null) {
-                aux = aux.getSig();
-                txt += " <= => " + aux.getX() + "," + aux.getY();
-            }
-            
-            txt += "   <= => Null";
-
-        } else {
-            throw new MyException("La lista está vacía");
-        }
-        return txt;
-    }
+        
     
         
 }

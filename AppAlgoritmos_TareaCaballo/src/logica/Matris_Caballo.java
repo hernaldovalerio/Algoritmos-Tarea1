@@ -15,6 +15,7 @@ import logica.Caballo;
 public class Matris_Caballo {
     private Caballo [][] matris;
     private Caballo o_caballo;
+    private Lista_Doble lista;
 
     public Caballo[][] getMatris() {
         return matris;
@@ -52,11 +53,11 @@ public class Matris_Caballo {
         return false;
     }
         
-    public void MoverCaballo(int p_opcion){        
+    public void MoverCaballo(int pOpcion){        
         int fila = o_caballo.getFila();
         int columna = o_caballo.getColumna();
         
-        switch (p_opcion) {                        
+        switch (pOpcion) {                        
             case 1: // Ubica al caballo dos filas arriba de su posicion actual
                 //                      una columna a la izquierda de su posicion actual
                 matris [fila-2][columna-1] = o_caballo;
@@ -99,7 +100,7 @@ public class Matris_Caballo {
         }
     }
     
-    public String ImprimirMatris(){
+    public String MostrarMatris(){
         String impresion = "\n            ";
         for (int i = 0; i < matris.length; i++) {
             for (int j = 0; j < matris[i].length; j++) {
@@ -113,5 +114,12 @@ public class Matris_Caballo {
         
         return impresion;
     }    
+    
+    public String MostarRecorrido(){
+        Nodo oNodo = lista.getPrimero();
+        int [][] matrisRecorrido = new int [matris.length][matris.length];
+        String impresion = "";
+        return impresion;
+    }
 }
 
