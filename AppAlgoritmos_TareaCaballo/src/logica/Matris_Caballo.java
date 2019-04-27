@@ -52,11 +52,33 @@ public class Matris_Caballo {
         }
         return false;
     }
-
-    public int posibleMovimiento() {
-        int valor = 0;
+    
+    public int movimientoBordeInterno(){
+        //Casos de la columna izquierda interior
+        if (caballo.getFila() == 1 && caballo.getColumna() == 1) {
+            //4 6 7 8
+        } else if (caballo.getFila() == (matris.length-2) && caballo.getColumna() == 1) {
+            // 1 2 4 6
+        }
+        if (caballo.getColumna() == 1) {
+            //1 2 4 6 7 8
+        }
         
-        //Casos de la fila
+        //Casos de la columna derecha interior
+        if (caballo.getFila() == 1 && caballo.getColumna() == (matris.length-2)) {
+            // 5 7 8
+        } else if (caballo.getFila() == (matris.length-2) && caballo.getColumna() == (matris.length-2)) {
+            // 1 2 3 5
+        }
+        if (caballo.getColumna() == (matris.length-2)) {
+            //1 2 3 5 7 8
+        }
+        
+        return 0;
+    }
+    
+    public int movimientoBordeExterno(){
+        //Casos de la primera fila externa
         if (caballo.getFila() == 0 && caballo.getColumna() == 0) {//Caballo fila 0 columna 0
             //6 8
 
@@ -69,11 +91,53 @@ public class Matris_Caballo {
         } else if (caballo.getFila() == 0 && caballo.getColumna() == (matris.length - 1)) {
             //5 7 
             
+        //////////////////////////////////////////////    
         } else if (caballo.getFila() == 0) {
             //5 6 7 8
         }
+        /////////////////////////////////////////////
         
-        //Casos de la columna 
+        //Casos de la ultima fila externa
+        if (caballo.getFila() == (matris.length-1) && caballo.getColumna() == (matris.length -1)) {
+            //2 4            
+        }
+        else if(caballo.getFila() == (matris.length-1) && caballo.getColumna() == 1){
+            // 1 2 4
+            
+        }else if(caballo.getFila() == (matris.length-1) && caballo.getColumna() == 2){
+            // 1 2 3 4        
+        
+        }else if(caballo.getFila() == (matris.length-1) && caballo.getColumna() == (matris.length-2) ){
+            // 1 2 3 
+            
+        }else if(caballo.getFila() == (matris.length-1) && caballo.getColumna() == (matris.length-2) ){
+            // 1 3 
+        }
+                        
+        
+        //Casos de la columna izquierda externa
+        if (caballo.getFila() == 1 && caballo.getColumna() == 0) {
+            // 4  6  8
+        } else if (caballo.getFila() == (matris.length -2) && caballo.getColumna() == 0) {
+            //2 4 6
+        }
+        
+        //Casos de la columna derecha externa
+        if (caballo.getFila() == 1 && caballo.getColumna() == (matris.length -1)) {
+            // 3  5  7
+        } else if (caballo.getFila() == (matris.length -2) && caballo.getColumna() == (matris.length -1)) {
+            //1 3 7
+        }
+        
+        return 0;
+    }
+
+    public int posibleMovimiento() {
+        int valor = 0;
+        
+        
+        
+        
         return valor;
     }                        
         
