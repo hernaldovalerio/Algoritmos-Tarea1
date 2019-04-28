@@ -18,8 +18,9 @@ public class JFrmPrincipal extends javax.swing.JFrame {
     Tablero1 matris; 
     
     public JFrmPrincipal() {
-        initComponents();        
-        jTxTImpresion_Matris.setEnabled(false);
+        initComponents();             
+        this.CargarCombo();
+        this.jTxTImpresion_Matris.setEnabled(false);
     }
 
     /**
@@ -49,6 +50,7 @@ public class JFrmPrincipal extends javax.swing.JFrame {
         jTxtFld_columna = new javax.swing.JTextField();
         jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
+        jCmbBox_tammano = new javax.swing.JComboBox<>();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -104,11 +106,11 @@ public class JFrmPrincipal extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap(33, Short.MAX_VALUE)
+                .addContainerGap(30, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel6)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(27, 27, 27)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 186, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel6))
+                .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -126,7 +128,7 @@ public class JFrmPrincipal extends javax.swing.JFrame {
                                 .addComponent(jTxtFld_fila, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(jTxtFld_columna, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(0, 0, Short.MAX_VALUE)))
+                                .addGap(0, 7, Short.MAX_VALUE)))
                         .addGap(18, 18, 18)
                         .addComponent(jBttnElegirCoordenadas_Salida, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(96, 96, 96))
@@ -136,13 +138,15 @@ public class JFrmPrincipal extends javax.swing.JFrame {
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(jTxtFld_TamannoMatris, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jBttnCambiarTamanno_Matris))
+                                .addComponent(jBttnCambiarTamanno_Matris)
+                                .addGap(18, 18, 18)
+                                .addComponent(jCmbBox_tammano, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(jLabel1)
                             .addComponent(jLabel4)
                             .addComponent(jBttnCalcularRecorrido)
                             .addComponent(jLabel3)
                             .addComponent(jLabel2))
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                        .addContainerGap(73, Short.MAX_VALUE))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -156,7 +160,8 @@ public class JFrmPrincipal extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jBttnCambiarTamanno_Matris)
-                            .addComponent(jTxtFld_TamannoMatris, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jTxtFld_TamannoMatris, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jCmbBox_tammano, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(11, 11, 11)
                         .addComponent(jLabel2)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -173,12 +178,12 @@ public class JFrmPrincipal extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jLabel3)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jBttnCalcularRecorrido)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jLabel4))
+                        .addComponent(jBttnCalcularRecorrido))
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 169, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)))
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 171, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jLabel4)
                 .addGap(11, 11, 11)
                 .addComponent(jBttnMostrarTiempo_Caballo)
                 .addGap(18, 18, 18)
@@ -190,9 +195,17 @@ public class JFrmPrincipal extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
+    
+    private void CargarCombo(){
+        jCmbBox_tammano.addItem("5");
+        jCmbBox_tammano.addItem("6");
+        jCmbBox_tammano.addItem("7");
+        jCmbBox_tammano.addItem("8");
+    }
+    
     private void jBttnCambiarTamanno_MatrisActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBttnCambiarTamanno_MatrisActionPerformed
         int tamanno = Integer.parseInt(jTxtFld_TamannoMatris.getText());        
+        //int tamanno1 = (int)jCmbBox_tammano.getSelectedItem();
         this.matris = new Tablero1(tamanno);
         this.jTxTImpresion_Matris.setText(matris.MostrarTablero());
         this.jTxtFld_TamannoMatris.setText("");
@@ -255,6 +268,7 @@ public class JFrmPrincipal extends javax.swing.JFrame {
     private javax.swing.JButton jBttnElegirCoordenadas_Salida;
     private javax.swing.JButton jBttnImprimirRecorrido;
     private javax.swing.JButton jBttnMostrarTiempo_Caballo;
+    private javax.swing.JComboBox<String> jCmbBox_tammano;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;

@@ -112,6 +112,7 @@ public class Tablero1 {
     public int Movimiento_BordeInterno(){
         int movimiento = 0;
         //Casos de la columna izquierda del borde interior del tablero
+        //1
         if (this.getFila() == 1 && this.getColumna() == 1) {
             // Casos de movimiento 4 6 7 8
             if (this.CASO4()) {
@@ -123,6 +124,7 @@ public class Tablero1 {
             } else {
                 movimiento = 8;
             }
+        //2
         } else if (this.getFila() == (matris1.length - 2) && this.getColumna() == 1) {
             // Casos de movimiento 1 2 4 6
             if (this.CASO1()) {
@@ -155,6 +157,7 @@ public class Tablero1 {
         }
 
         //Casos de la columna derecha del borde interior del tablero
+        //1
         else if (this.getFila() == 1 && this.getColumna() == (this.matris1.length - 2)) {
             // Casos de movimiento 5 7 8
             if (this.CASO5()) {
@@ -164,6 +167,7 @@ public class Tablero1 {
             }else {
                 movimiento = 8;
             }                                                
+         //2
         } else if (this.getFila() == (this.matris1.length-2) && this.getColumna() == (this.matris1.length-2)) {
             // Casos de movimiento 1 2 3 5
             if (this.CASO1()) {
@@ -192,6 +196,42 @@ public class Tablero1 {
                 movimiento = 7;
             } else {
                 movimiento = 8;
+            }
+        }
+        
+        // Caso general de la fila superior del borde interno del tablero
+        else if (this.getFila() == 1) {
+            // Casos de movimiento 3 4 5 6 7 8
+            if (this.CASO3()) {
+                movimiento = 3;
+            } else if (this.CASO4()) {
+                movimiento = 4;
+            } else if (this.CASO5()) {
+                movimiento = 5;
+            } else if (this.CASO6()) {
+                movimiento = 6;
+            } else if (this.CASO7()) {
+                movimiento = 7;
+            } else {
+                movimiento = 8;
+            }
+        }
+        
+        // Caso general de la fila inferior del borde interno del tablero
+        else if (this.getFila() == (matris1.length-2)) {
+            // Casos de movimiento 1 2 3 4 5 6
+            if (this.CASO1()) {
+                movimiento = 1;
+            } else if (this.CASO2()) {
+                movimiento = 2;
+            } else if (this.CASO3()) {
+                movimiento = 3;
+            } else if (this.CASO4()) {
+                movimiento = 4;
+            } else if (this.CASO5()) {
+                movimiento = 5;
+            } else {
+                movimiento = 6;
             }
         }
         
@@ -417,18 +457,18 @@ public class Tablero1 {
 
     public void Movimiento() {
          if(this.getFila()== 0 || this.getFila()== (this.matris1.length -1)
-                || this.getColumna() == 0 || this.getColumna() == (this.matris1.length -1)){
-             
-                this.MoverCaballo(this.Movimiento_BordeExterno());
-                
-        } else if(this.getFila() == 1 || this.getFila()== (this.matris1.length -2)
-                || this.getColumna() == 1 || this.getColumna() == (this.matris1.length -2)){
-            
+                || this.getColumna() == 0 || this.getColumna() == (this.matris1.length - 1)) {
+
+            this.MoverCaballo(this.Movimiento_BordeExterno());
+
+        } else if (this.getFila() == 1 || this.getFila() == (this.matris1.length - 2)
+                || this.getColumna() == 1 || this.getColumna() == (this.matris1.length - 2)) {
+
             this.MoverCaballo(this.Movimiento_BordeInterno());
-            
+
         } else {
             this.MoverCaballo(this.Movimiento_Central());
-        }                       
+        }                    
     }                        
         
     public void MoverCaballo(int pOpcion){                
@@ -504,7 +544,7 @@ public class Tablero1 {
         String impresion = "\n              ";        
         for (int i = 0; i < matris1.length; i++) {
             for (int j = 0; j < matris1[i].length; j++) {
-                impresion += matris1[i][j] + "   ";
+                impresion += matris1[i][j] + "    ";
             }
             impresion += "\n              ";
         }
