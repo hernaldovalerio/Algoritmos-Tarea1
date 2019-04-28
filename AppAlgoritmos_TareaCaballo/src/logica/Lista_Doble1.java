@@ -44,21 +44,7 @@ public class Lista_Doble1 {
         this.primero = null;        
         this.ultimo = null;
         this.tamm = 0;
-    }
-    
-    public void InsertarInicio(int pX, int pY) {
-
-        if (primero == null) {
-            primero = new Nodo1(pX, pY);
-            ultimo = primero;
-        } else {
-            Nodo1 nuevo = new Nodo1(pX, pY);
-            nuevo.setSig(primero);            
-            primero.setAnt(nuevo);                                
-            primero = nuevo;
-        }
-        tamm++;        
-    }
+    }        
     
     public void InsertarFinal(int pX, int pY) {
         if (primero == null) {
@@ -83,25 +69,7 @@ public class Lista_Doble1 {
         }else{            
             throw new MyException("La lista se encuentra vacia");
         }
-    }
-    
-    public void EliminarInicio() throws MyException {
-
-        if (primero != null) {            
-            if (primero.getSig() != null) {
-                
-                primero = primero.getSig();
-
-            } else {
-                primero = null;
-
-            }
-            tamm--;
-            
-        } else {
-            throw new MyException("La lista está vacía");
-        }
-    }
+    }        
     
     public void EliminarFinal() throws MyException {
 
@@ -121,6 +89,14 @@ public class Lista_Doble1 {
         }        
     }
         
+    public int ObtenerFila(){
+        int fila = ultimo.getX();;                                
+        return fila;
+    }
     
+    public int ObtenerColumna(){
+        int columna = ultimo.getY();;                                
+        return columna;
+    }
         
 }

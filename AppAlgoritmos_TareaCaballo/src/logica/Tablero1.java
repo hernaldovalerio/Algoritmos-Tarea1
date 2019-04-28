@@ -5,6 +5,10 @@
  */
 package logica;
 
+import Main.MyException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 
 /**
  *
@@ -456,98 +460,114 @@ public class Tablero1 {
     }
 
     public void Movimiento() {
-        int valor = 0;
+        int opcion = 0;
+        int fila = this.getFila(), fila_anterior = 0;
+        int columna = this.getColumna(), columna_anterior = 0;
+        
+        //Mueve el caballo de una celda del borde externo
         if (this.getFila() == 0 || this.getFila() == (this.matris1.length - 1)
-                || this.getColumna() == 0 || this.getColumna() == (this.matris1.length - 1)) {
+                || this.getColumna() == 0 || this.getColumna() == (this.matris1.length - 1)) {                        
+            opcion = 1;                        
 
-            valor = this.Movimiento_BordeExterno();
-            if (valor != 0) {
-                this.MoverCaballo(this.Movimiento_BordeExterno());
-            }
-
+        //Mueve el caballo de una celda del borde interno
         } else if (this.getFila() == 1 || this.getFila() == (this.matris1.length - 2)
-                || this.getColumna() == 1 || this.getColumna() == (this.matris1.length - 2)) {
-            valor = this.Movimiento_BordeInterno();
-            if (valor != 0) {
-                this.MoverCaballo(this.Movimiento_BordeInterno());
-            }
-
-        } else {
-            valor = this.Movimiento_Central();
-            if (valor != 0) {
-                this.MoverCaballo(this.Movimiento_Central());
-            }
-
+                || this.getColumna() == 1 || this.getColumna() == (this.matris1.length - 2)) {                       
+            opcion = 2;            
+            
+        //Mueve el caballo de alguna celda central
+        } else {                        
+            opcion = 3;            
         }
+        
+        //Mueve el caballo si el valor es distinto de 0
+            //Caso contrario retrocede
+        switch(opcion){
+            case 1:
+                this.Movimiento_BordeExterno();
+                break;
+            case 2:
+                this.MoverCaballo(this.Movimiento_BordeInterno());
+                break;
+            case 3:
+                this.MoverCaballo(this.Movimiento_Central());
+                break;
+            default:
+                try {
+                    //El caballo retrocede                    
+                    this.matris1[fila][columna] = 0;
+                    this.lista1.EliminarFinal();
+                    fila_anterior = lista1.ObtenerFila();
+                    columna_anterior = lista1.ObtenerColumna();
+                    this.setFila(fila_anterior);
+                    this.setColumna(columna_anterior);
+                } catch (MyException ex) {
+                    System.out.println("Error: " + ex.getMessage());
+                }
+        }        
     }                        
         
     public void MoverCaballo(int pOpcion){                
+        this.caballo1++;
         
         switch (pOpcion) {                        
             case 1: // Ubica al caballo dos filas arriba de su posicion actual
-                //                      una columna a la izquierda de su posicion actual
-                this.caballo1++;
+                //                      una columna a la izquierda de su posicion actual                
                 this.matris1 [fila1-2][columna1-1] = caballo1;                
                 this.setFila(fila1-2);
-                this.setColumna(columna1-1);
+                this.setColumna(columna1-1);                
                 break;
                         
             case 2: // Ubica al caballo dos filas arriba de su posicion actual
-                //                      una columna a la derecha de su posicion actual
-                this.caballo1++;
+                //                      una columna a la derecha de su posicion actual                
                 this.matris1 [fila1-2][columna1+1] = caballo1;                
                 this.setFila(fila1-2);
-                this.setColumna(columna1+1);
+                this.setColumna(columna1+1);                
                 break;            
             
             case 3: // Ubica al caballo una fila arriba de su posicion actual
-                //                      dos columnas a la izquierda de su posicion actual
-                this.caballo1++;
+                //                      dos columnas a la izquierda de su posicion actual                
                 this.matris1 [fila1-1][columna1-2] = caballo1;                
                 this.setFila(fila1-1);
                 this.setColumna(columna1-2);
                 break;
                         
             case 4: // Ubica al caballo una fila arriba de su posicion actual
-                //                      dos columnas a la derecha de su posicion actual
-                this.caballo1++;
+                //                      dos columnas a la derecha de su posicion actual                
                 this.matris1 [fila1-1][columna1+2] = caballo1;                
                 this.setFila(fila1-1);
                 this.setColumna(columna1+2);
                 break;
                 
             case 5: // Ubica al caballo una fila debajo de su posicion actual
-                //                      dos columnas a la izquierda de su posicion actual
-                this.caballo1++;
+                //                      dos columnas a la izquierda de su posicion actual                
                 this.matris1[fila1+1][columna1-2] = caballo1;                
                 this.setFila(fila1+1);
                 this.setColumna(columna1-2);
                 break;
                 
             case 6: // Ubica al caballo una fila debajo de su posicion actual
-                //                      dos columnas a la derecha de su posicion actual
-                this.caballo1++;
+                //                      dos columnas a la derecha de su posicion actual                
                 this.matris1[fila1+1][columna1+2] = caballo1;                
                 this.setFila(fila1+1);
                 this.setColumna(columna1+2);
                 break;
                 
             case 7: // Ubica al caballo dos filas debajo de su posicion actual
-                //                      una columna a la izquierda de su posicion actual
-                this.caballo1++;
+                //                      una columna a la izquierda de su posicion actual                
                 this.matris1[fila1+2][columna1-1] = caballo1;                
                 this.setFila(fila1+2);
                 this.setColumna(columna1-1);
                 break;
                 
             case 8: // Ubica al caballo dos filas debajo de su posicion actual
-                //                      una columna a la derecha de su posicion actual
-                this.caballo1++;
+                //                      una columna a la derecha de su posicion actual                
                 this.matris1[fila1+2][columna1+1] = caballo1;                
                 this.setFila(fila1+2);
                 this.setColumna(columna1+1);
                 break;
         }
+        
+        this.lista1.InsertarFinal(fila1, columna1);
     }
     
     public String MostrarTablero(){
