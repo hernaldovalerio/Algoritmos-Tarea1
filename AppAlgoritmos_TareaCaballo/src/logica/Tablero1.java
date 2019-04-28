@@ -121,7 +121,7 @@ public class Tablero1 {
                 movimiento = 6;
             } else if (this.CASO7()) {
                 movimiento = 7;
-            } else {
+            } else if (this.CASO8()){
                 movimiento = 8;
             }
         //2
@@ -133,7 +133,7 @@ public class Tablero1 {
                 movimiento = 2;
             } else if (this.CASO4()) {
                 movimiento = 4;
-            } else {
+            } else if (this.CASO8()){
                 movimiento = 6;
             }
         }
@@ -151,7 +151,7 @@ public class Tablero1 {
                 movimiento = 6;
             } else if(this.CASO7()){
                 movimiento = 7;
-            } else {
+            } else if (this.CASO8()){
                 movimiento = 8;
             }
         }
@@ -164,7 +164,7 @@ public class Tablero1 {
                 movimiento = 5;
             } else if (this.CASO7()) {
                 movimiento = 7;
-            }else {
+            }else if (this.CASO8()){
                 movimiento = 8;
             }                                                
          //2
@@ -176,7 +176,7 @@ public class Tablero1 {
                 movimiento = 2;
             } else if (this.CASO3()) {
                 movimiento = 3;
-            } else {
+            } else if (this.CASO5()){
                 movimiento = 5;
             }
         }
@@ -212,7 +212,7 @@ public class Tablero1 {
                 movimiento = 6;
             } else if (this.CASO7()) {
                 movimiento = 7;
-            } else {
+            } else if (this.CASO8()){
                 movimiento = 8;
             }
         }
@@ -230,7 +230,7 @@ public class Tablero1 {
                 movimiento = 4;
             } else if (this.CASO5()) {
                 movimiento = 5;
-            } else {
+            } else if (this.CASO6()){
                 movimiento = 6;
             }
         }
@@ -251,7 +251,7 @@ public class Tablero1 {
             // Casos de movimiento 6 8
             if (this.CASO6()) {
                 movimiento = 6;
-            } else {
+            } else if (this.CASO8()){
                 movimiento = 8;
             }
         //2
@@ -261,7 +261,7 @@ public class Tablero1 {
                 movimiento = 6;
             } else if (this.CASO7()) {
                 movimiento = 7;
-            }else {
+            }else if (this.CASO8()){
                 movimiento = 8;
             }
         //3
@@ -271,7 +271,7 @@ public class Tablero1 {
                 movimiento = 5;
             } else if (this.CASO7()) {
                 movimiento = 7;
-            }else {
+            }else if (this.CASO8()){
                 movimiento = 8;
             }
         //4
@@ -279,7 +279,7 @@ public class Tablero1 {
             // Casos de movimiento 5 7 
              if (this.CASO5()) {
                 movimiento = 5;
-            } else {
+            } else if (this.CASO7()){
                 movimiento = 7;
             }                    
         }
@@ -293,7 +293,7 @@ public class Tablero1 {
                 movimiento = 6;
             } else if (this.CASO7()) {
                 movimiento = 7;
-            } else {
+            } else if (this.CASO8()){
                 movimiento = 8;
             }            
         }
@@ -304,7 +304,7 @@ public class Tablero1 {
             // Casos de movimiento 2 4            
             if (this.CASO2()) {
                 movimiento = 2;
-            } else {
+            } else if (this.CASO4()){
                 movimiento = 4;
             }
         //2
@@ -314,7 +314,7 @@ public class Tablero1 {
                 movimiento = 1;
             } else if (this.CASO2()) {
                 movimiento = 2;
-            }else {
+            }else if (this.CASO4()){
                 movimiento = 4;
             }
         //3
@@ -324,7 +324,7 @@ public class Tablero1 {
                 movimiento = 1;
             } else if (this.CASO2()) {
                 movimiento = 2;
-            }else {
+            }else if (this.CASO3()){
                 movimiento = 3;
             }            
         //4
@@ -332,7 +332,7 @@ public class Tablero1 {
             // Casos de movimiento 1 3 
              if (this.CASO1()) {
                 movimiento = 1;
-            } else {
+            } else if (this.CASO3()){
                 movimiento = 3;
             }
         }
@@ -345,7 +345,7 @@ public class Tablero1 {
                 movimiento = 2;
             } else if (this.CASO3()) {
                 movimiento = 3;
-            } else {
+            } else if (this.CASO4()){
                 movimiento = 4;
             }
         }
@@ -358,7 +358,7 @@ public class Tablero1 {
                 movimiento = 4;
             } else if (this.CASO6()) {
                 movimiento = 6;
-            }else {
+            }else if (this.CASO8()){
                 movimiento = 8;
             }
         //2
@@ -368,7 +368,7 @@ public class Tablero1 {
                 movimiento = 2;
             } else if (this.CASO4()) {
                 movimiento = 4;
-            }else {
+            }else if (this.CASO6()){
                 movimiento = 6;
             }
         }
@@ -383,7 +383,7 @@ public class Tablero1 {
             }else if(this.CASO6()) {
                 movimiento = 6;
             }
-            else{
+            else if (this.CASO8()){
                 movimiento = 8;
             }
         }        
@@ -396,7 +396,7 @@ public class Tablero1 {
                 movimiento = 3;
             } else if (this.CASO5()) {
                 movimiento = 5;
-            }else {
+            }else if (this.CASO7()){
                 movimiento = 7;
             }
         //2
@@ -406,7 +406,7 @@ public class Tablero1 {
                 movimiento = 1;
             } else if (this.CASO3()) {
                 movimiento = 3;
-            }else {
+            }else if (this.CASO5()){
                 movimiento = 5;
             }
         }
@@ -420,7 +420,7 @@ public class Tablero1 {
                 movimiento = 3;
             }else if(this.CASO5()) {
                 movimiento = 5;
-            } else {
+            } else if (this.CASO7()){
                 movimiento = 7;
             }
         }    
@@ -449,26 +449,36 @@ public class Tablero1 {
             caso = 6;
         } else if (this.CASO7()) {
             caso = 7;
-        } else {
+        } else if (this.CASO8()){
             caso = 8;
         }
         return caso;
     }
 
     public void Movimiento() {
-         if(this.getFila()== 0 || this.getFila()== (this.matris1.length -1)
+        int valor = 0;
+        if (this.getFila() == 0 || this.getFila() == (this.matris1.length - 1)
                 || this.getColumna() == 0 || this.getColumna() == (this.matris1.length - 1)) {
 
-            this.MoverCaballo(this.Movimiento_BordeExterno());
+            valor = this.Movimiento_BordeExterno();
+            if (valor != 0) {
+                this.MoverCaballo(this.Movimiento_BordeExterno());
+            }
 
         } else if (this.getFila() == 1 || this.getFila() == (this.matris1.length - 2)
                 || this.getColumna() == 1 || this.getColumna() == (this.matris1.length - 2)) {
-
-            this.MoverCaballo(this.Movimiento_BordeInterno());
+            valor = this.Movimiento_BordeInterno();
+            if (valor != 0) {
+                this.MoverCaballo(this.Movimiento_BordeInterno());
+            }
 
         } else {
-            this.MoverCaballo(this.Movimiento_Central());
-        }                    
+            valor = this.Movimiento_Central();
+            if (valor != 0) {
+                this.MoverCaballo(this.Movimiento_Central());
+            }
+
+        }
     }                        
         
     public void MoverCaballo(int pOpcion){                
