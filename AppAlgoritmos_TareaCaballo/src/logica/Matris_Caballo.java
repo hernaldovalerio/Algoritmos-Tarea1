@@ -13,7 +13,7 @@ import logica.Caballo;
  * @author Hernaldo Valerio P.
  */
 public class Matris_Caballo {
-    private Caballo [][] matris;
+    private Caballo [][] matris;    
     private Caballo caballo;
     private Lista_Doble lista;
 
@@ -54,34 +54,88 @@ public class Matris_Caballo {
     }
     
     public int movimientoBordeInterno(){
+        int caso = 0;
         //Casos de la columna izquierda interior
         if (caballo.getFila() == 1 && caballo.getColumna() == 1) {
             //4 6 7 8
-        } else if (caballo.getFila() == (matris.length-2) && caballo.getColumna() == 1) {
+            if (estaCaballo((this.caballo.getFila() -1), (this.caballo.getColumna() +2))) {
+                caso = 4;
+            } else if (estaCaballo((this.caballo.getFila() +1), (this.caballo.getColumna() +2))) {
+                caso = 6;
+            } else if (estaCaballo((this.caballo.getFila() +2), (this.caballo.getColumna() -1))) {
+                caso = 7;
+            } else {
+                caso = 8;
+            }
+        } else if (caballo.getFila() == (matris.length - 2) && caballo.getColumna() == 1) {
             // 1 2 4 6
+            if (estaCaballo((this.caballo.getFila() -2), (this.caballo.getColumna() -1))) {
+                caso = 1;
+            } else if (estaCaballo((this.caballo.getFila() -2), (this.caballo.getColumna() +1))) {
+                caso = 2;
+            } else if (estaCaballo((this.caballo.getFila() -1), (this.caballo.getColumna() +2))) {
+                caso = 4;
+            } else {
+                caso = 6;
+            }
         }
         if (caballo.getColumna() == 1) {
             //1 2 4 6 7 8
+            if (estaCaballo((this.caballo.getFila() -2), (this.caballo.getColumna() -1))) {
+                caso = 1;
+            } else if (estaCaballo((this.caballo.getFila() -2), (this.caballo.getColumna() +1))) {
+                caso = 2;
+            } else if (estaCaballo((this.caballo.getFila() -1), (this.caballo.getColumna() +2))) {
+                caso = 4;
+            } else if(estaCaballo((this.caballo.getFila() +1), (this.caballo.getColumna() +2))){
+                caso = 6;
+            } else if(estaCaballo((this.caballo.getFila() +2), (this.caballo.getColumna() -1))){
+                caso = 7;
+            } else {
+                caso = 8;
+            }
         }
-        
+
         //Casos de la columna derecha interior
-        if (caballo.getFila() == 1 && caballo.getColumna() == (matris.length-2)) {
+        if (caballo.getFila() == 1 && caballo.getColumna() == (matris.length - 2)) {
             // 5 7 8
+            
+            
+            
+            
+            ///////////////////////////////////fdfgdg&&&&&&&&/////////////
         } else if (caballo.getFila() == (matris.length-2) && caballo.getColumna() == (matris.length-2)) {
             // 1 2 3 5
+            if (estaCaballo((this.caballo.getFila() -2), (this.caballo.getColumna() -1))) {
+                caso = 1;
+            } else if (estaCaballo((this.caballo.getFila() -2), (this.caballo.getColumna() +1))) {
+                caso = 2;
+            } else if (estaCaballo((this.caballo.getFila() -1), (this.caballo.getColumna() +2))) {
+                caso = 4;
+            } else {
+                caso = 6;
+            }
         }
         if (caballo.getColumna() == (matris.length-2)) {
             //1 2 3 5 7 8
         }
         
-        return 0;
+        return caso;
+    }
+    
+    public boolean estaCaballo(int x, int y){
+        if(matris[x][y] == null){
+            return true;
+        } else {
+            return false;
+        }
     }
     
     public int movimientoBordeExterno(){
         //Casos de la primera fila externa
         if (caballo.getFila() == 0 && caballo.getColumna() == 0) {//Caballo fila 0 columna 0
             //6 8
-
+            
         } else if (caballo.getFila() == 0 && caballo.getColumna() == 1) {
             //6 7 8
             
@@ -94,7 +148,7 @@ public class Matris_Caballo {
         //////////////////////////////////////////////    
         } else if (caballo.getFila() == 0) {
             //5 6 7 8
-        }
+        } 
         /////////////////////////////////////////////
         
         //Casos de la ultima fila externa
