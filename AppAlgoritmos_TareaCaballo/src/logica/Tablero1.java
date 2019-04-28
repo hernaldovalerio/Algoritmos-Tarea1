@@ -465,21 +465,14 @@ public class Tablero1 {
     }
     
     public String MostrarTablero(){
-        String impresion = "\n              ";
-        int con = 1;
+        String impresion = "\n              ";        
         for (int i = 0; i < matris1.length; i++) {
             for (int j = 0; j < matris1[i].length; j++) {
-                if (matris1[i][j] == 0) 
-                    impresion += "0" + "   ";                
-                else{
-                    impresion += con + "   ";                
-                    con++;
-                }
-                    
+                impresion += matris1[i][j] + "   ";
             }
             impresion += "\n              ";
         }
-        
+
         return impresion;
     }    
     
