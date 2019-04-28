@@ -5,7 +5,7 @@
  */
 package Main;
 
-import logica.Matris_Caballo;
+import logica.Tablero1;
 import javax.swing.JOptionPane;
 
 /**
@@ -15,7 +15,7 @@ import javax.swing.JOptionPane;
  */
 public class JFrmPrincipal extends javax.swing.JFrame {
 
-    Matris_Caballo matris_caballo; 
+    Tablero1 matris; 
     
     public JFrmPrincipal() {
         initComponents();        
@@ -45,8 +45,8 @@ public class JFrmPrincipal extends javax.swing.JFrame {
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         jTxtFld_TamannoMatris = new javax.swing.JTextField();
-        jTxtFld_X = new javax.swing.JTextField();
-        jTxtFld_Y = new javax.swing.JTextField();
+        jTxtFld_fila = new javax.swing.JTextField();
+        jTxtFld_columna = new javax.swing.JTextField();
         jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
 
@@ -72,6 +72,11 @@ public class JFrmPrincipal extends javax.swing.JFrame {
         });
 
         jBttnCalcularRecorrido.setText("Calcular");
+        jBttnCalcularRecorrido.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBttnCalcularRecorridoActionPerformed(evt);
+            }
+        });
 
         jBttnMostrarTiempo_Caballo.setText("Mostrar");
 
@@ -135,9 +140,9 @@ public class JFrmPrincipal extends javax.swing.JFrame {
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                         .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 17, javax.swing.GroupLayout.PREFERRED_SIZE))
                                     .addGroup(layout.createSequentialGroup()
-                                        .addComponent(jTxtFld_X, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(jTxtFld_fila, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(jTxtFld_Y, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(jTxtFld_columna, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addGap(0, 0, Short.MAX_VALUE)))
                                 .addGap(18, 18, 18)
                                 .addComponent(jBttnElegirCoordenadas_Salida, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)))
@@ -166,8 +171,8 @@ public class JFrmPrincipal extends javax.swing.JFrame {
                                     .addComponent(jLabel8))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(jTxtFld_X, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jTxtFld_Y, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                    .addComponent(jTxtFld_fila, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jTxtFld_columna, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                             .addComponent(jBttnElegirCoordenadas_Salida, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jLabel3)
@@ -192,16 +197,20 @@ public class JFrmPrincipal extends javax.swing.JFrame {
 
     private void jBttnCambiarTamanno_MatrisActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBttnCambiarTamanno_MatrisActionPerformed
         int tamanno = Integer.parseInt(jTxtFld_TamannoMatris.getText());        
-        matris_caballo = new Matris_Caballo(tamanno, tamanno);
-        this.jTxTImpresion_Matris.setText(matris_caballo.MostrarMatris());
+        this.matris = new Tablero1(tamanno);
+        this.jTxTImpresion_Matris.setText(matris.MostrarTablero());
     }//GEN-LAST:event_jBttnCambiarTamanno_MatrisActionPerformed
 
     private void jBttnElegirCoordenadas_SalidaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBttnElegirCoordenadas_SalidaActionPerformed
-        int fila = Integer.parseInt(jTxtFld_X.getText());
-        int columna = Integer.parseInt(jTxtFld_Y.getText());                
-        matris_caballo.PosicionarCaballo(fila, columna);
-        this.jTxTImpresion_Matris.setText(matris_caballo.MostrarMatris());
+        int fila = Integer.parseInt(jTxtFld_fila.getText());
+        int columna = Integer.parseInt(jTxtFld_columna.getText());                
+        this.matris.PosicionarCaballo1(fila, columna);
+        this.jTxTImpresion_Matris.setText(matris.MostrarTablero());
     }//GEN-LAST:event_jBttnElegirCoordenadas_SalidaActionPerformed
+
+    private void jBttnCalcularRecorridoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBttnCalcularRecorridoActionPerformed
+        this.matris.Movimiento();
+    }//GEN-LAST:event_jBttnCalcularRecorridoActionPerformed
 
     /**
      * @param args the command line arguments
@@ -258,7 +267,7 @@ public class JFrmPrincipal extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextArea jTxTImpresion_Matris;
     private javax.swing.JTextField jTxtFld_TamannoMatris;
-    private javax.swing.JTextField jTxtFld_X;
-    private javax.swing.JTextField jTxtFld_Y;
+    private javax.swing.JTextField jTxtFld_columna;
+    private javax.swing.JTextField jTxtFld_fila;
     // End of variables declaration//GEN-END:variables
 }

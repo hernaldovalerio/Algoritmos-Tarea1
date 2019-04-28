@@ -11,24 +11,24 @@ import Main.MyException;
  *
  * @author ucr
  */
-public class Lista_Doble {
-    private Nodo primero;
-    private Nodo ultimo;
+public class Lista_Doble1 {
+    private Nodo1 primero;
+    private Nodo1 ultimo;
     private int tamm;
 
-    public Nodo getPrimero() {
+    public Nodo1 getPrimero() {
         return primero;
     }
 
-    public void setPrimero(Nodo primero) {
+    public void setPrimero(Nodo1 primero) {
         this.primero = primero;
     }
 
-    public Nodo getUltimo() {
+    public Nodo1 getUltimo() {
         return ultimo;
     }
 
-    public void setUltimo(Nodo ultimo) {
+    public void setUltimo(Nodo1 ultimo) {
         this.ultimo = ultimo;
     }
 
@@ -40,7 +40,7 @@ public class Lista_Doble {
         this.tamm = tamm;
     }
     
-    public Lista_Doble() {
+    public Lista_Doble1() {
         this.primero = null;        
         this.ultimo = null;
         this.tamm = 0;
@@ -49,10 +49,10 @@ public class Lista_Doble {
     public void InsertarInicio(int pX, int pY) {
 
         if (primero == null) {
-            primero = new Nodo(pX, pY);
+            primero = new Nodo1(pX, pY);
             ultimo = primero;
         } else {
-            Nodo nuevo = new Nodo(pX, pY);
+            Nodo1 nuevo = new Nodo1(pX, pY);
             nuevo.setSig(primero);            
             primero.setAnt(nuevo);                                
             primero = nuevo;
@@ -62,10 +62,10 @@ public class Lista_Doble {
     
     public void InsertarFinal(int pX, int pY) {
         if (primero == null) {
-            primero = new Nodo(pX, pY);
+            primero = new Nodo1(pX, pY);
             ultimo = primero;
         } else {
-            Nodo nuevo = new Nodo(pX, pY);
+            Nodo1 nuevo = new Nodo1(pX, pY);
             nuevo.setAnt(ultimo);
             ultimo.setSig(nuevo);
             ultimo = nuevo;

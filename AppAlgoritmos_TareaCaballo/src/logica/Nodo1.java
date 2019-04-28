@@ -9,11 +9,11 @@ package logica;
  *
  * @author Hernaldo Valerio P.
  */
-public class Nodo {
+public class Nodo1 {
     int x;
     int y;
-    Nodo sig;
-    Nodo ant;
+    Nodo1 sig;
+    Nodo1 ant;
 
     public int getX() {
         return x;
@@ -31,23 +31,23 @@ public class Nodo {
         this.y = y;
     }
 
-    public Nodo getSig() {
+    public Nodo1 getSig() {
         return sig;
     }
 
-    public void setSig(Nodo sig) {
+    public void setSig(Nodo1 sig) {
         this.sig = sig;
     }
 
-    public Nodo getAnt() {
+    public Nodo1 getAnt() {
         return ant;
     }
 
-    public void setAnt(Nodo ant) {
+    public void setAnt(Nodo1 ant) {
         this.ant = ant;
     }
 
-    public Nodo(int x, int y) {
+    public Nodo1(int x, int y) {
         this.x = x;
         this.y = y;
     }

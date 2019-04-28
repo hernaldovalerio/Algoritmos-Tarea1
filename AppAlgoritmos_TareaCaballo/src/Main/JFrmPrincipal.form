@@ -68,9 +68,9 @@
                                       <Component id="jLabel8" min="-2" pref="17" max="-2" attributes="0"/>
                                   </Group>
                                   <Group type="102" alignment="0" attributes="0">
-                                      <Component id="jTxtFld_X" min="-2" pref="31" max="-2" attributes="0"/>
+                                      <Component id="jTxtFld_fila" min="-2" pref="31" max="-2" attributes="0"/>
                                       <EmptySpace max="-2" attributes="0"/>
-                                      <Component id="jTxtFld_Y" min="-2" pref="34" max="-2" attributes="0"/>
+                                      <Component id="jTxtFld_columna" min="-2" pref="34" max="-2" attributes="0"/>
                                       <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                                   </Group>
                               </Group>
@@ -110,8 +110,8 @@
                               </Group>
                               <EmptySpace min="-2" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="3" attributes="0">
-                                  <Component id="jTxtFld_X" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jTxtFld_Y" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jTxtFld_fila" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jTxtFld_columna" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
                           </Group>
                           <Component id="jBttnElegirCoordenadas_Salida" alignment="0" min="-2" pref="34" max="-2" attributes="0"/>
@@ -176,6 +176,9 @@
       <Properties>
         <Property name="text" type="java.lang.String" value="Calcular"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jBttnCalcularRecorridoActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="jBttnMostrarTiempo_Caballo">
       <Properties>
@@ -222,9 +225,9 @@
     </Component>
     <Component class="javax.swing.JTextField" name="jTxtFld_TamannoMatris">
     </Component>
-    <Component class="javax.swing.JTextField" name="jTxtFld_X">
+    <Component class="javax.swing.JTextField" name="jTxtFld_fila">
     </Component>
-    <Component class="javax.swing.JTextField" name="jTxtFld_Y">
+    <Component class="javax.swing.JTextField" name="jTxtFld_columna">
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel7">
       <Properties>
