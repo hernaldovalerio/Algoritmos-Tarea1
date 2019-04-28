@@ -39,8 +39,9 @@ public class Tablero1 {
         
     public Tablero1(int pTamanno) {          
         this.matris1 = new int [pTamanno][pTamanno];
-        this.caballo1 = 0;
+        this.caballo1 = 1;
         this.contador1 = 0;
+        this.lista1 = new Lista_Doble1();
     }    
                 
     public boolean TamannoMatrix1(int pTamanno) {
@@ -74,8 +75,7 @@ public class Tablero1 {
         }           
         return false;
     }
-       
-    
+           
     /**
      * Casos de movimiento del caballo del tablero
      * @return true
@@ -400,64 +400,64 @@ public class Tablero1 {
         switch (pOpcion) {                        
             case 1: // Ubica al caballo dos filas arriba de su posicion actual
                 //                      una columna a la izquierda de su posicion actual
-                this.matris1 [fila1-2][columna1-1] = caballo1;
                 this.caballo1++;
+                this.matris1 [fila1-2][columna1-1] = caballo1;                
                 this.setFila(fila1-2);
                 this.setColumna(columna1-1);
                 break;
                         
             case 2: // Ubica al caballo dos filas arriba de su posicion actual
                 //                      una columna a la derecha de su posicion actual
-                this.matris1 [fila1-2][columna1+1] = caballo1;
                 this.caballo1++;
+                this.matris1 [fila1-2][columna1+1] = caballo1;                
                 this.setFila(fila1-2);
                 this.setColumna(columna1+1);
                 break;            
             
             case 3: // Ubica al caballo una fila arriba de su posicion actual
                 //                      dos columnas a la izquierda de su posicion actual
-                this.matris1 [fila1-1][columna1-2] = caballo1;
                 this.caballo1++;
+                this.matris1 [fila1-1][columna1-2] = caballo1;                
                 this.setFila(fila1-1);
                 this.setColumna(columna1-2);
                 break;
                         
             case 4: // Ubica al caballo una fila arriba de su posicion actual
                 //                      dos columnas a la derecha de su posicion actual
-                this.matris1 [fila1-1][columna1+2] = caballo1;
                 this.caballo1++;
+                this.matris1 [fila1-1][columna1+2] = caballo1;                
                 this.setFila(fila1-1);
                 this.setColumna(columna1+2);
                 break;
                 
             case 5: // Ubica al caballo una fila debajo de su posicion actual
                 //                      dos columnas a la izquierda de su posicion actual
-                this.matris1[fila1+1][columna1-2] = caballo1;
                 this.caballo1++;
+                this.matris1[fila1+1][columna1-2] = caballo1;                
                 this.setFila(fila1+1);
                 this.setColumna(columna1-2);
                 break;
                 
             case 6: // Ubica al caballo una fila debajo de su posicion actual
                 //                      dos columnas a la derecha de su posicion actual
-                this.matris1[fila1+1][columna1+2] = caballo1;
                 this.caballo1++;
+                this.matris1[fila1+1][columna1+2] = caballo1;                
                 this.setFila(fila1+1);
                 this.setColumna(columna1+2);
                 break;
                 
             case 7: // Ubica al caballo dos filas debajo de su posicion actual
                 //                      una columna a la izquierda de su posicion actual
-                this.matris1[fila1+2][columna1-1] = caballo1;
                 this.caballo1++;
+                this.matris1[fila1+2][columna1-1] = caballo1;                
                 this.setFila(fila1+2);
                 this.setColumna(columna1-1);
                 break;
                 
             case 8: // Ubica al caballo dos filas debajo de su posicion actual
                 //                      una columna a la derecha de su posicion actual
-                this.matris1[fila1+2][columna1+1] = caballo1;
                 this.caballo1++;
+                this.matris1[fila1+2][columna1+1] = caballo1;                
                 this.setFila(fila1+2);
                 this.setColumna(columna1+1);
                 break;
@@ -477,7 +477,7 @@ public class Tablero1 {
                 }
                     
             }
-            impresion += "\n            ";
+            impresion += "\n              ";
         }
         
         return impresion;
