@@ -206,6 +206,7 @@ public class Tablero1 {
         int movimiento = 0;
         
         //Casos de la primera fila del borde externo del tablero
+        //1
         if (this.getFila() == 0 && this.getColumna() == 0) {
             // Casos de movimiento 6 8
             if (this.CASO6()) {
@@ -213,6 +214,7 @@ public class Tablero1 {
             } else {
                 movimiento = 8;
             }
+        //2
         } else if (this.getFila() == 0 && this.getColumna() == 1) {
             // Casos de movimiento 6 7 8
             if (this.CASO6()) {
@@ -221,8 +223,26 @@ public class Tablero1 {
                 movimiento = 7;
             }else {
                 movimiento = 8;
-            }            
-        }    
+            }
+        //3
+        } else if (this.getFila() == 0 && this.getColumna() == (this.matris1.length - 2)) {
+            // Casos de movimiento 5 7 8
+            if (this.CASO5()) {
+                movimiento = 5;
+            } else if (this.CASO7()) {
+                movimiento = 7;
+            }else {
+                movimiento = 8;
+            }
+        //4
+        } else if (this.getFila() == 0 && this.getColumna() == (this.matris1.length - 1)) {
+            // Casos de movimiento 5 7 
+             if (this.CASO5()) {
+                movimiento = 5;
+            } else {
+                movimiento = 7;
+            }                    
+        }
         
         //Caso general del borde exterior superior del tablero
         else if (this.getFila() == 0) {
@@ -235,27 +255,11 @@ public class Tablero1 {
                 movimiento = 7;
             } else {
                 movimiento = 8;
-            }
-            
-        } else if (this.getFila() == 0 && this.getColumna() == (this.matris1.length - 2)) {
-            // Casos de movimiento 5 7 8
-            if (this.CASO5()) {
-                movimiento = 5;
-            } else if (this.CASO7()) {
-                movimiento = 7;
-            }else {
-                movimiento = 8;
-            }
-        } else if (this.getFila() == 0 && this.getColumna() == (this.matris1.length - 1)) {
-            // Casos de movimiento 5 7 
-             if (this.CASO5()) {
-                movimiento = 5;
-            } else {
-                movimiento = 7;
-            }                    
+            }            
         }
         
         //Casos de la ultima fila del borde externo del tablero
+        //1
         else if (this.getFila() == (this.matris1.length-1) && this.getColumna() == 0) {
             // Casos de movimiento 2 4            
             if (this.CASO2()) {
@@ -263,6 +267,7 @@ public class Tablero1 {
             } else {
                 movimiento = 4;
             }
+        //2
         }else if(this.getFila() == (this.matris1.length-1) && this.getColumna() == 1){
             // Casos de movimiento 1 2 4
             if (this.CASO1()) {
@@ -272,8 +277,25 @@ public class Tablero1 {
             }else {
                 movimiento = 4;
             }
+        //3
+        } else if (this.getFila() == (this.matris1.length - 1) && this.getColumna() == (this.matris1.length - 2)) {
+            // Casos de movimiento 1 2 3 
+            if (this.CASO1()) {
+                movimiento = 1;
+            } else if (this.CASO2()) {
+                movimiento = 2;
+            }else {
+                movimiento = 3;
+            }            
+        //4
+        }else if(this.getFila() == (this.matris1.length-1) && this.getColumna() == (this.matris1.length-1) ){
+            // Casos de movimiento 1 3 
+             if (this.CASO1()) {
+                movimiento = 1;
+            } else {
+                movimiento = 3;
+            }
         }
-        
         // Caso general borde exterior inferior del tablero
         else if(this.getFila() == (this.matris1.length-1)){
             // Casos de movimiento 1 2 3 4     
@@ -286,26 +308,10 @@ public class Tablero1 {
             } else {
                 movimiento = 4;
             }
-             
-        }else if(this.getFila() == (this.matris1.length-1) && this.getColumna() == (this.matris1.length-2) ){
-            // Casos de movimiento 1 2 3 
-             if (this.CASO1()) {
-                movimiento = 1;
-            } else if (this.CASO2()) {
-                movimiento = 2;
-            }else {
-                movimiento = 3;
-            }            
-        }else if(this.getFila() == (this.matris1.length-1) && this.getColumna() == (this.matris1.length-1) ){
-            // Casos de movimiento 1 3 
-             if (this.CASO1()) {
-                movimiento = 1;
-            } else {
-                movimiento = 3;
-            }
         }
                                 
         //Casos de la columna izquierda del borde externo del tablero
+        //1
         else if (this.getFila() == 1 && this.getColumna() == 0) {
             // Casos de movimiento 4  6  8
              if (this.CASO4()) {
@@ -315,6 +321,7 @@ public class Tablero1 {
             }else {
                 movimiento = 8;
             }
+        //2
         } else if (this.getFila() == (this.matris1.length -2) && this.getColumna() == 0) {
             // Casos de movimiento 2 4 6
               if (this.CASO2()) {
@@ -326,9 +333,23 @@ public class Tablero1 {
             }
         }
         
-        /////////////////////////////////yfhusdfhsu//////////////
+        // Caso general de la columna izquierda del borde exterior del tablero
+        else if(this.getColumna() == 0){
+            // Casos de movimiento 2 4 6 8
+              if (this.CASO2()) {
+                movimiento = 2;
+            } else if (this.CASO4()) {
+                movimiento = 4;
+            }else if(this.CASO6()) {
+                movimiento = 6;
+            }
+            else{
+                movimiento = 8;
+            }
+        }        
         
         //Casos de la columna derecha del borde externo del tablero
+        //1
         else if (this.getFila() == 1 && this.getColumna() == (this.matris1.length -1)) {
             // Casos de movimiento 3  5  7
             if (this.CASO3()) {
@@ -338,6 +359,7 @@ public class Tablero1 {
             }else {
                 movimiento = 7;
             }
+        //2
         } else if (this.getFila() == (this.matris1.length -2) && this.getColumna() == (this.matris1.length -1)) {
             // Casos de movimiento 1 3 5
             if (this.CASO1()) {
@@ -348,6 +370,20 @@ public class Tablero1 {
                 movimiento = 5;
             }
         }
+        
+        // Caso general de la columna derecha del borde exterior del tablero
+        else if(this.getColumna() == (this.matris1.length -1) ){
+            // Casos de movimiento 1 3 5 7
+              if (this.CASO1()) {
+                movimiento = 1;
+            } else if (this.CASO3()) {
+                movimiento = 3;
+            }else if(this.CASO5()) {
+                movimiento = 5;
+            } else {
+                movimiento = 7;
+            }
+        }    
         
         return movimiento;
     }        
