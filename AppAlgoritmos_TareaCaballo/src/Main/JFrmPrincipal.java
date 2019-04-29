@@ -51,6 +51,7 @@ public class JFrmPrincipal extends javax.swing.JFrame {
         jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
         jCmbBox_tammano = new javax.swing.JComboBox<>();
+        jBttnCalcularRecorrido1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -101,6 +102,13 @@ public class JFrmPrincipal extends javax.swing.JFrame {
 
         jLabel8.setText("Columna");
 
+        jBttnCalcularRecorrido1.setText("Calcular1");
+        jBttnCalcularRecorrido1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBttnCalcularRecorrido1ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -140,10 +148,14 @@ public class JFrmPrincipal extends javax.swing.JFrame {
                                 .addGap(18, 18, 18)
                                 .addComponent(jCmbBox_tammano, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(jLabel1)
-                            .addComponent(jLabel4)
-                            .addComponent(jBttnCalcularRecorrido)
                             .addComponent(jLabel3)
-                            .addComponent(jLabel2))
+                            .addComponent(jLabel2)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                                    .addComponent(jBttnCalcularRecorrido)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(jBttnCalcularRecorrido1))
+                                .addComponent(jLabel4, javax.swing.GroupLayout.Alignment.LEADING)))
                         .addContainerGap(73, Short.MAX_VALUE))))
         );
         layout.setVerticalGroup(
@@ -176,7 +188,9 @@ public class JFrmPrincipal extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jLabel3)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jBttnCalcularRecorrido))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jBttnCalcularRecorrido)
+                            .addComponent(jBttnCalcularRecorrido1)))
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 171, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(0, 0, Short.MAX_VALUE)))
@@ -220,7 +234,15 @@ public class JFrmPrincipal extends javax.swing.JFrame {
     private void jBttnCalcularRecorridoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBttnCalcularRecorridoActionPerformed
         this.matris.Movimiento();
         this.jTxTImpresion_Matris.setText(matris.MostrarTablero());
+        int x = 0;
+        int f = 1;
     }//GEN-LAST:event_jBttnCalcularRecorridoActionPerformed
+
+    private void jBttnCalcularRecorrido1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBttnCalcularRecorrido1ActionPerformed
+        // TODO add your handling code here:
+        this.matris.Movimiento();
+        this.jTxTImpresion_Matris.setText(matris.MostrarTablero());
+    }//GEN-LAST:event_jBttnCalcularRecorrido1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -262,6 +284,7 @@ public class JFrmPrincipal extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jBttnCalcularRecorrido;
+    private javax.swing.JButton jBttnCalcularRecorrido1;
     private javax.swing.JButton jBttnCambiarTamanno_Matris;
     private javax.swing.JButton jBttnElegirCoordenadas_Salida;
     private javax.swing.JButton jBttnImprimirRecorrido;

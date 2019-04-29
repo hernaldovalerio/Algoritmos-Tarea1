@@ -22,8 +22,8 @@ public class Tablero1 {
     private int fila1;
     private int columna1;
     private int contador1;
-    private Lista_Doble1 lista1;
-         
+    private Lista_Coordenadas1 lista1;         
+    private Lista_Casos1 lista2;
 
     public int getFila() {
         return fila1;
@@ -45,7 +45,7 @@ public class Tablero1 {
         this.matris1 = new int [pTamanno][pTamanno];
         this.caballo1 = 1;
         this.contador1 = 0;
-        this.lista1 = new Lista_Doble1();
+        this.lista1 = new Lista_Coordenadas1();
     }    
                 
     public boolean TamannoMatrix1(int pTamanno) {
@@ -137,7 +137,7 @@ public class Tablero1 {
                 movimiento = 2;
             } else if (this.CASO4()) {
                 movimiento = 4;
-            } else if (this.CASO8()){
+            } else if (this.CASO6()){
                 movimiento = 6;
             }
         }
@@ -460,9 +460,7 @@ public class Tablero1 {
     }
 
     public void Movimiento() {
-        int opcion = 0;
-        int fila = this.getFila(), fila_anterior = 0;
-        int columna = this.getColumna(), columna_anterior = 0;
+        int opcion = 0;        
         
         //Mueve el caballo de una celda del borde externo
         if (this.getFila() == 0 || this.getFila() == (this.matris1.length - 1)
@@ -483,31 +481,30 @@ public class Tablero1 {
             //Caso contrario retrocede
         switch(opcion){
             case 1:
-                this.Movimiento_BordeExterno();
+                opcion = this.Movimiento_BordeExterno();
+                this.MoverCaballo(opcion);
                 break;
             case 2:
-                this.MoverCaballo(this.Movimiento_BordeInterno());
+                opcion = this.Movimiento_BordeInterno();
+                this.MoverCaballo(opcion);
                 break;
             case 3:
-                this.MoverCaballo(this.Movimiento_Central());
-                break;
-            default:
-                try {
-                    //El caballo retrocede                    
-                    this.matris1[fila][columna] = 0;
-                    this.lista1.EliminarFinal();
-                    fila_anterior = lista1.ObtenerFila();
-                    columna_anterior = lista1.ObtenerColumna();
-                    this.setFila(fila_anterior);
-                    this.setColumna(columna_anterior);
-                } catch (MyException ex) {
-                    System.out.println("Error: " + ex.getMessage());
-                }
+                opcion = this.Movimiento_Central();
+                this.MoverCaballo(opcion);
+                break;            
         }        
     }                        
         
-    public void MoverCaballo(int pOpcion){                
-        this.caballo1++;
+    public void MoverCaballo(int pOpcion){                        
+        boolean bandera = false;
+        int fila = this.getFila(), fila_anterior = 0;
+        int columna = this.getColumna(), columna_anterior = 0;
+        
+        //Pregunta si el caballo posee movimientos
+        if (pOpcion != 0) {
+            this.caballo1++;
+            bandera = true;
+        }        
         
         switch (pOpcion) {                        
             case 1: // Ubica al caballo dos filas arriba de su posicion actual
@@ -561,13 +558,36 @@ public class Tablero1 {
                 
             case 8: // Ubica al caballo dos filas debajo de su posicion actual
                 //                      una columna a la derecha de su posicion actual                
-                this.matris1[fila1+2][columna1+1] = caballo1;                
-                this.setFila(fila1+2);
-                this.setColumna(columna1+1);
+                this.matris1[fila1 + 2][columna1 + 1] = caballo1;
+                this.setFila(fila1 + 2);
+                this.setColumna(columna1 + 1);
+                break;
+            default:
+                //El caballo retrocede       
+                caballo1--;
+                this.matris1[fila][columna] = 0;
+                 {
+                    try {
+                        this.lista1.EliminarFinal();
+                    } catch (MyException ex) {
+                        System.out.println("Error \n" + ex.getMessage());
+                    }
+                }
+                fila_anterior = lista1.ObtenerFila();
+                columna_anterior = lista1.ObtenerColumna();
+                this.setFila(fila_anterior);
+                this.setColumna(columna_anterior);
                 break;
         }
         
-        this.lista1.InsertarFinal(fila1, columna1);
+        //Si la bandera es true inserta las coordenadas
+        if (bandera) {
+            this.lista1.InsertarFinal(fila1, columna1);
+        }        
+        else{
+            
+        }
+        
     }
     
     public String MostrarTablero(){
@@ -583,7 +603,7 @@ public class Tablero1 {
     }    
     
     public String MostarRecorrido(){
-        Nodo1 oNodo = lista1.getPrimero();
+        Nodo_Coordenadas1 oNodo = lista1.getPrimero();
         int [][] matrisRecorrido = new int [matris1.length][matris1.length];
         String impresion = "";
         return impresion;

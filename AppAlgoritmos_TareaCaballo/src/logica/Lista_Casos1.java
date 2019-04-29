@@ -9,29 +9,30 @@ import Main.MyException;
 
 /**
  *
- * @author ucr
+ * @version 29 de abril del 2019
+ * @author Hernaldo Valerio Pineda
  */
-public class Lista_Doble1 {
-    private Nodo1 primero;
-    private Nodo1 ultimo;
+public class Lista_Casos1 {
+    private Nodo_Casos1 primero;
+    private Nodo_Casos1 ultimo;
     private int tamm;
 
-    public Nodo1 getPrimero() {
+    public Nodo_Casos1 getPrimero() {
         return primero;
     }
 
-    public void setPrimero(Nodo1 primero) {
+    public void setPrimero(Nodo_Casos1 primero) {
         this.primero = primero;
     }
 
-    public Nodo1 getUltimo() {
+    public Nodo_Casos1 getUltimo() {
         return ultimo;
     }
 
-    public void setUltimo(Nodo1 ultimo) {
+    public void setUltimo(Nodo_Casos1 ultimo) {
         this.ultimo = ultimo;
     }
-
+    
     public int getTamm() {
         return tamm;
     }
@@ -40,18 +41,18 @@ public class Lista_Doble1 {
         this.tamm = tamm;
     }
     
-    public Lista_Doble1() {
+    public Lista_Casos1() {
         this.primero = null;        
         this.ultimo = null;
         this.tamm = 0;
     }        
     
-    public void InsertarFinal(int pX, int pY) {
+    public void InsertarFinal(int pNum) {
         if (primero == null) {
-            primero = new Nodo1(pX, pY);
+            primero = new Nodo_Casos1(pNum);
             ultimo = primero;
         } else {
-            Nodo1 nuevo = new Nodo1(pX, pY);
+            Nodo_Casos1 nuevo = new Nodo_Casos1(pNum);
             nuevo.setAnt(ultimo);
             ultimo.setSig(nuevo);
             ultimo = nuevo;
@@ -89,14 +90,9 @@ public class Lista_Doble1 {
         }        
     }
         
-    public int ObtenerFila(){
-        int fila = ultimo.getX();;                                
+    public int ObtenerNumero(){
+        int fila = ultimo.getNum();  
         return fila;
-    }
-    
-    public int ObtenerColumna(){
-        int columna = ultimo.getY();;                                
-        return columna;
-    }
+    }        
         
 }
