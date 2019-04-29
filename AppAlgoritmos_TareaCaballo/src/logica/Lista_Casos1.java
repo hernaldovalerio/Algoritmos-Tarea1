@@ -15,6 +15,7 @@ import Main.MyException;
 public class Lista_Casos1 {
     private Nodo_Casos1 primero;
     private Nodo_Casos1 ultimo;
+    private Nodo_Casos1 aux;
     private int tamm;
 
     public Nodo_Casos1 getPrimero() {
@@ -32,6 +33,14 @@ public class Lista_Casos1 {
     public void setUltimo(Nodo_Casos1 ultimo) {
         this.ultimo = ultimo;
     }
+
+    public Nodo_Casos1 getAux() {
+        return aux;
+    }
+
+    public void setAux(Nodo_Casos1 aux) {
+        this.aux = aux;
+    }    
     
     public int getTamm() {
         return tamm;
@@ -44,6 +53,7 @@ public class Lista_Casos1 {
     public Lista_Casos1() {
         this.primero = null;        
         this.ultimo = null;
+        this.aux = null;
         this.tamm = 0;
     }        
     
@@ -51,6 +61,7 @@ public class Lista_Casos1 {
         if (primero == null) {
             primero = new Nodo_Casos1(pNum);
             ultimo = primero;
+            aux = primero;
         } else {
             Nodo_Casos1 nuevo = new Nodo_Casos1(pNum);
             nuevo.setAnt(ultimo);
@@ -66,6 +77,7 @@ public class Lista_Casos1 {
         if (primero != null) {
             primero = null;
             ultimo = null;
+            aux = null;
             tamm = 0;
         }else{            
             throw new MyException("La lista se encuentra vacia");
@@ -88,6 +100,16 @@ public class Lista_Casos1 {
         } else {
             throw new MyException("La lista está vacía");
         }        
+    }
+    
+    public int ObtenerCaso(){
+        int caso = aux.getNum();
+        
+        if (aux.getSig() != null) {
+            aux = aux.getSig();
+        }
+        
+        return caso;
     }
         
     public int ObtenerNumero(){
