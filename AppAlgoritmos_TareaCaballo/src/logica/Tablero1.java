@@ -22,7 +22,7 @@ public class Tablero1 {
     private int fila1;
     private int columna1;    
     private Lista_Coordenadas1 lista1;         
-    private int caso_anterior1;
+    private int veces;
     private Lista_Casos1 lista2;
 
     public int getFila() {
@@ -44,7 +44,7 @@ public class Tablero1 {
     public Tablero1(int pTamanno) {          
         this.matris1 = new int [pTamanno][pTamanno];
         this.caballo1 = 1;
-        this.caso_anterior1 = 0;
+        this.veces = 0;
         this.lista1 = new Lista_Coordenadas1();
         this.lista2 = new Lista_Casos1();
     }    
@@ -325,11 +325,15 @@ public class Tablero1 {
             }
             if (this.CASO7()) {
                 this.lista2.InsertarFinal(7);                
-            }                          
+            }                                      
         }    
-        
+                
         if (lista2.getTamm() != 0) {
             movimiento = lista2.ObtenerCaso();
+            
+            if (veces != 0) {
+                 movimiento = lista2.ObtenerCaso();            
+             }
         }
         
         return movimiento;
@@ -498,6 +502,10 @@ public class Tablero1 {
         
         if (lista2.getTamm() != 0) {
             movimiento = lista2.ObtenerCaso();
+            
+            if (veces == 1) {
+                 movimiento = lista2.ObtenerCaso();            
+             }
         }
         
         return movimiento;
@@ -537,7 +545,11 @@ public class Tablero1 {
          }                      
         
          if (lista2.getTamm() != 0) {
-             movimiento = lista2.ObtenerCaso();            
+             movimiento = lista2.ObtenerCaso();       
+             
+             if (veces == 1) {
+                 movimiento = lista2.ObtenerCaso();            
+             }
          }
         
         return movimiento;
@@ -582,8 +594,7 @@ public class Tablero1 {
     public void MoverCaballo(int pOpcion){                        
         boolean bandera = false;
         int fila = this.getFila(), fila_anterior = this.getFila();
-        int columna = this.getColumna(), columna_anterior = this.getColumna();
-        int nuevo_caso = 0;
+        int columna = this.getColumna(), columna_anterior = this.getColumna();                
         
         //Pregunta si el caballo posee movimientos
         if (pOpcion != 0) {
@@ -661,9 +672,9 @@ public class Tablero1 {
                 fila_anterior = lista1.ObtenerFila();
                 columna_anterior = lista1.ObtenerColumna();                
                 this.setFila(fila_anterior);
-                this.setColumna(columna_anterior);
-                nuevo_caso = this.lista2.ObtenerCaso();
-                this.MoverCaballo(nuevo_caso);
+                this.setColumna(columna_anterior);                
+                veces++;
+                this.Movimiento();
                 break;
         }
                 
@@ -675,6 +686,7 @@ public class Tablero1 {
             } catch (MyException ex) {
                 System.out.println("Error:\n" + ex.getMessage());;
             }
+            veces = 0;
         }                
         
     }

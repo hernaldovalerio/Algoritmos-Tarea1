@@ -36,7 +36,6 @@ public class JFrmPrincipal extends javax.swing.JFrame {
         jTxTImpresion_Matris = new javax.swing.JTextArea();
         jBttnCambiarTamanno_Matris = new javax.swing.JButton();
         jBttnElegirCoordenadas_Salida = new javax.swing.JButton();
-        jBttnCalcularRecorrido = new javax.swing.JButton();
         jBttnMostrarTiempo_Caballo = new javax.swing.JButton();
         jBttnImprimirRecorrido = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
@@ -66,18 +65,11 @@ public class JFrmPrincipal extends javax.swing.JFrame {
             }
         });
 
-        jBttnElegirCoordenadas_Salida.setText("Elegir");
+        jBttnElegirCoordenadas_Salida.setText("Ubicar");
         jBttnElegirCoordenadas_Salida.setToolTipText("");
         jBttnElegirCoordenadas_Salida.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jBttnElegirCoordenadas_SalidaActionPerformed(evt);
-            }
-        });
-
-        jBttnCalcularRecorrido.setText("Calcular");
-        jBttnCalcularRecorrido.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jBttnCalcularRecorridoActionPerformed(evt);
             }
         });
 
@@ -137,7 +129,7 @@ public class JFrmPrincipal extends javax.swing.JFrame {
                                 .addComponent(jTxtFld_columna, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGap(18, 18, 18)
                         .addComponent(jBttnElegirCoordenadas_Salida, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(96, 96, 96))
+                        .addGap(109, 109, 109))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jBttnMostrarTiempo_Caballo)
@@ -150,13 +142,9 @@ public class JFrmPrincipal extends javax.swing.JFrame {
                             .addComponent(jLabel1)
                             .addComponent(jLabel3)
                             .addComponent(jLabel2)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                                    .addComponent(jBttnCalcularRecorrido)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(jBttnCalcularRecorrido1))
-                                .addComponent(jLabel4, javax.swing.GroupLayout.Alignment.LEADING)))
-                        .addContainerGap(73, Short.MAX_VALUE))))
+                            .addComponent(jLabel4)
+                            .addComponent(jBttnCalcularRecorrido1))
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -175,22 +163,18 @@ public class JFrmPrincipal extends javax.swing.JFrame {
                         .addGap(11, 11, 11)
                         .addComponent(jLabel2)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(jLabel7)
-                                    .addComponent(jLabel8))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(jTxtFld_fila, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jTxtFld_columna, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                            .addComponent(jBttnElegirCoordenadas_Salida, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel7)
+                            .addComponent(jLabel8))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jTxtFld_fila, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jTxtFld_columna, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jBttnElegirCoordenadas_Salida))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jLabel3)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jBttnCalcularRecorrido)
-                            .addComponent(jBttnCalcularRecorrido1)))
+                        .addComponent(jBttnCalcularRecorrido1))
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 171, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(0, 0, Short.MAX_VALUE)))
@@ -230,13 +214,6 @@ public class JFrmPrincipal extends javax.swing.JFrame {
         this.matris.PosicionarCaballo1(fila, columna);
         this.jTxTImpresion_Matris.setText(matris.MostrarTablero());
     }//GEN-LAST:event_jBttnElegirCoordenadas_SalidaActionPerformed
-
-    private void jBttnCalcularRecorridoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBttnCalcularRecorridoActionPerformed
-        this.matris.Movimiento();
-        this.jTxTImpresion_Matris.setText(matris.MostrarTablero());
-        int x = 0;
-        int f = 1;
-    }//GEN-LAST:event_jBttnCalcularRecorridoActionPerformed
 
     private void jBttnCalcularRecorrido1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBttnCalcularRecorrido1ActionPerformed
         // TODO add your handling code here:
@@ -283,7 +260,6 @@ public class JFrmPrincipal extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jBttnCalcularRecorrido;
     private javax.swing.JButton jBttnCalcularRecorrido1;
     private javax.swing.JButton jBttnCambiarTamanno_Matris;
     private javax.swing.JButton jBttnElegirCoordenadas_Salida;

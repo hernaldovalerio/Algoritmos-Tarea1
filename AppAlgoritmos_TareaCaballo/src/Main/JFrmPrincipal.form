@@ -53,7 +53,7 @@
                       </Group>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Component id="jBttnElegirCoordenadas_Salida" min="-2" pref="73" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="96" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="109" max="-2" attributes="0"/>
                   </Group>
                   <Group type="102" attributes="0">
                       <Group type="103" groupAlignment="0" attributes="0">
@@ -68,16 +68,10 @@
                           <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
                           <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
                           <Component id="jLabel2" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Group type="103" alignment="0" groupAlignment="1" max="-2" attributes="0">
-                              <Group type="102" alignment="0" attributes="0">
-                                  <Component id="jBttnCalcularRecorrido" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace max="32767" attributes="0"/>
-                                  <Component id="jBttnCalcularRecorrido1" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                              <Component id="jLabel4" alignment="0" min="-2" max="-2" attributes="0"/>
-                          </Group>
+                          <Component id="jLabel4" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="jBttnCalcularRecorrido1" alignment="0" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace pref="73" max="32767" attributes="0"/>
+                      <EmptySpace max="32767" attributes="0"/>
                   </Group>
               </Group>
           </Group>
@@ -102,27 +96,20 @@
                       <EmptySpace min="-2" pref="11" max="-2" attributes="0"/>
                       <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="102" attributes="0">
-                              <Group type="103" groupAlignment="3" attributes="0">
-                                  <Component id="jLabel7" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jLabel8" alignment="3" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                              <EmptySpace min="-2" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="3" attributes="0">
-                                  <Component id="jTxtFld_fila" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jTxtFld_columna" alignment="3" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                          </Group>
-                          <Component id="jBttnElegirCoordenadas_Salida" alignment="0" min="-2" pref="34" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="jLabel7" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="jLabel8" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="jTxtFld_fila" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="jTxtFld_columna" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="jBttnElegirCoordenadas_Salida" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace max="32767" attributes="0"/>
                       <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="jBttnCalcularRecorrido" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jBttnCalcularRecorrido1" alignment="3" min="-2" max="-2" attributes="0"/>
-                      </Group>
+                      <Component id="jBttnCalcularRecorrido1" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <Group type="102" alignment="0" attributes="0">
                       <Component id="jScrollPane1" min="-2" pref="171" max="-2" attributes="0"/>
@@ -168,19 +155,11 @@
     </Component>
     <Component class="javax.swing.JButton" name="jBttnElegirCoordenadas_Salida">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Elegir"/>
+        <Property name="text" type="java.lang.String" value="Ubicar"/>
         <Property name="toolTipText" type="java.lang.String" value=""/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jBttnElegirCoordenadas_SalidaActionPerformed"/>
-      </Events>
-    </Component>
-    <Component class="javax.swing.JButton" name="jBttnCalcularRecorrido">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="Calcular"/>
-      </Properties>
-      <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jBttnCalcularRecorridoActionPerformed"/>
       </Events>
     </Component>
     <Component class="javax.swing.JButton" name="jBttnMostrarTiempo_Caballo">

@@ -107,14 +107,8 @@ public class Lista_Casos1 {
         
         if (aux.getSig() != null) {
             aux = aux.getSig();
-        }
+        }        
         
         return caso;
-    }
-        
-    public int ObtenerNumero(){
-        int fila = ultimo.getNum();  
-        return fila;
-    }        
-        
+    }                    
 }
